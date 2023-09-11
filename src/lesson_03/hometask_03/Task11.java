@@ -9,10 +9,10 @@ import java.util.Scanner;
         Input:
         4
         Output:
-        *
-        ***
-        *****
-        ********/
+            *
+           ***
+          *****
+         *******/
 public class Task11 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -24,17 +24,20 @@ public class Task11 {
             return;
         }
 
-        int numberOfStars = -1;
+        int numberOfStars = 1;
+        int numberOfSpaces = number - 1;
 
         for (int index = 1; index <= number; index ++) {
-            numberOfStars = numberOfStars + 2;
+            for (int i = 1; i <= numberOfSpaces; i++) {
+                System.out.print(" ");
+            }
+            //System.out.println();
             for (int index2 = 1; index2 <= numberOfStars; index2++) {
                 System.out.print("*");
             }
             System.out.println();
-            }
-
-
-
+            numberOfStars = numberOfStars + 2;
+            numberOfSpaces--;
+        }
     }
 }

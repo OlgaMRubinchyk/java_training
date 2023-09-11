@@ -14,25 +14,17 @@ public class Task17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter positive integer:");
-        int number = sc.nextInt();
+        long number = sc.nextLong();
 
         if (number <= 0) {
             System.err.println("Number is not positive :)");
             return;
         }
 
-        if (number >= 17) {
-            System.err.println("Number is too big.");
-            return;
-        }
-
-        int f = 1;
-
+        long f = 1;
         for (int index = 1; index <= number; index ++) {
             f = f * index;
         }
         System.out.println(number + "! = " + f);
-
-
     }
 }

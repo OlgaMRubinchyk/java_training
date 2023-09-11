@@ -22,17 +22,12 @@ public class Task10 {
             return;
         }
 
-        for (int index = 2; index <= number; index ++) {
-            if (number % index != 0) {
-                System.out.println("Number is prime!");
-                break;
-            } else {
-                System.out.println("Number is NOT prime!" );
-                break;
+        for (int index = 2; index < number / 2; index++) {
+            if (number % index == 0) {
+                System.out.println("Number is NOT prime!");
+                return;
             }
         }
-
-
-
-    }
+        System.out.println("Number is prime!" );
+   }
 }

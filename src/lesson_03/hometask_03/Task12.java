@@ -7,7 +7,7 @@ public class Task12 {
     public static void main(String[] args) {
         System.out.println("List of all natural 3-digit numbers that do not have the same digits:");
 
-        for (int index = 100; index <= 999; index++) {
+        for (int index = 102; index <= 987; index++) {
             // Calculating each digit
             int firstDigit = index / 100;
             int secondDigit = index / 10 % 10;

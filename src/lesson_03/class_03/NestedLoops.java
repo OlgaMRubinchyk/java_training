@@ -3,9 +3,11 @@ package lesson_03.class_03;
 public class NestedLoops {
     public static void main(String[] args) {
         int a = 1;
-        int b = 1;
+        //int b = 1;
         // What is wrong?
         while (a < 10) {
+            // b should be here!
+            int b = 1;
             while (b < 10) {
                 System.out.println(a + " " + b);
                 b++;
@@ -31,9 +33,9 @@ public class NestedLoops {
                 continue;
             }
             System.out.println(aa + " " + bb);
-            /*if (aa == 3) {
+            if (aa == 3) {
                 break;
-            }*/
+            }
 
         }
 

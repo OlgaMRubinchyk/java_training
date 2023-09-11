@@ -19,6 +19,7 @@ public class Task07 {
 
         if (number <= 0) {
             System.err.println("Number is not positive :)");
+            return;
         }
         int sum = 0;
 
