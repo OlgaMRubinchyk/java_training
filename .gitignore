@@ -29,3 +29,5 @@ bin/
 .DS_Store
 
 src/lesson_02/
+.idea/
+src/lesson_04/.idea/
