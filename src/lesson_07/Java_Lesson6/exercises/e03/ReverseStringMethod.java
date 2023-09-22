@@ -1,7 +1,7 @@
 // Zadacha 3:
 // Izpolzvaiki rekursiq, napishete metod, koito da oburne String
 
-package exercises.e03;
+package lesson_07.Java_Lesson6.exercises.e03;
 
 public class ReverseStringMethod {
     public static void main(String[] args) {
