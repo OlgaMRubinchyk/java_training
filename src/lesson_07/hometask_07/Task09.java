@@ -12,17 +12,26 @@ Write a method to read 2 strings entered by the user. The method should check
 */
 public class Task09 {
     public static void main(String[] args) {
-        String s1 = "qw3456erty";
-        String s2 = "rty1";
-        boolean isSubstring = false;
+        String s1 = "1234";
+        String s2 = "qw3456erty1234";
 
+        System.out.println(containsEnd(s1, s2));
+    }
+
+    public static boolean containsEnd (String s1, String s2) {
         int s1Length = s1.length();// 10
         int s2Length = s2.length();// 3
 
-        if (s2.equals(s1.substring(s1Length - s2Length))) {
-            isSubstring = true;
+        if (s1Length >= s2Length) {
+            if (s2.equals(s1.substring(s1Length - s2Length))) {
+                return true;
+            }
+        } else {
+            if (s1.equals(s2.substring(s2Length - s1Length))) {
+                return true;
+            }
         }
 
-        System.out.println(isSubstring);
+        return false;
     }
 }
