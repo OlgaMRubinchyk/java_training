@@ -16,6 +16,13 @@ public class Enemy {
         this.level = level;
     }
     public void attack(Hero hero) {
+        if (getProbability() < 30) {
+            strength += 3;
+        }
+        hero.health -= strength;
 
+    }
+    public static int getProbability() {
+        return (int)Math.floor(Math.random() * (101));
     }
 }

@@ -28,12 +28,20 @@ public class Hero {
     }
 
     public void attack(Enemy enemy) {
+        if (getProbability() < 10) {
+            strength += 3;
+        }
+        enemy.health -= strength;
 
     }
     public void avoid() {
-
+        experience -= 10;
+        health += 50;
     }
     public void levelUp() {
 
+    }
+    public static int getProbability() {
+        return (int)Math.floor(Math.random() * (101));
     }
 }
