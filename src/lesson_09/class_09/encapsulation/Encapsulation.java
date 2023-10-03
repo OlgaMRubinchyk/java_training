@@ -1,37 +1,37 @@
 package lesson_09.class_09.encapsulation;
 
 public class Encapsulation {
-        private String privateEncapsulation = "private";
-        public String publicEncapsulation = "public";
-        final String defaultEncapsulation = "default = package private"; // package private
-        protected String protectedEncapsulation = "protected";
+    private String privateEncapsulation = "private"; // can be used inside this class only
+    public String publicEncapsulation = "public";
+    final String defaultEncapsulation = "package private"; //constant
+    protected String protectedEncapsulation = "protected";
 
-        final int[] arr = {1, 2, 3, 4, 5, 6};
-        final int CONSTANT_5 = 5; // use capital letters for constants
+    final int[] arr = {1, 2, 3, 4, 5, 6, 7};
 
-        private void privateMethod() {
-            System.out.println(privateEncapsulation);
-        }
+    final int CONSTANT_5 = 5; // WORD_NEXTWORD
 
-        public void publicMethod() {
-            System.out.println(publicEncapsulation);
-            privateMethod();
-        }
+    private void privateMethod() {
+        System.out.println(privateEncapsulation);
+    }
 
-        void defaultMethod() {
-            System.out.println(defaultEncapsulation);
-        }
+    public void publicMethod() {
+        System.out.println(publicEncapsulation);
+        privateMethod();
+    }
 
-        protected void protectedMethod() {
-            System.out.println(protectedEncapsulation);
-        }
-        // Getters and Setters
-        public String getPrivateEncapsulation() {
-            return privateEncapsulation;
-        }
+    void defaultMethod() {
+        System.out.println(defaultEncapsulation);
+    }
 
-        public void setPrivateEncapsulation(String privateEncapsulation) {
-            this.privateEncapsulation = privateEncapsulation;
-        }
+    protected void protectedMethod() {
+        System.out.println(protectedEncapsulation);
+    }
 
+    // Getters and Setters
+    public String getPrivateEncapsulation() {
+        return privateEncapsulation;
+    }
+    public void setPrivateEncapsulation(String privateEncapsulation) {
+        this.privateEncapsulation = privateEncapsulation;
+    }
 }

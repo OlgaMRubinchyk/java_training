@@ -4,39 +4,43 @@ import java.util.Arrays;
 
 public class DemoEncapsulation {
     public static void main(String[] args) {
-        Encapsulation encapsulation = new Encapsulation();
-
+        Encapsulation encapsulation = new Encapsulation(); // empty constructor
         System.out.println(encapsulation.publicEncapsulation);
         System.out.println(encapsulation.defaultEncapsulation);
         System.out.println(encapsulation.protectedEncapsulation);
-        // System.out.println(encapsulation.privateEncapsulation); // cannot access
-        encapsulation.publicEncapsulation = "Changing the value of the public field.";
-        // encapsulation.defaultEncapsulation = "something"; // not possible, we have final field (constant)
+        encapsulation.publicEncapsulation = "Changing the value of the public field";
+        // encapsulation.defaultEncapsulation = "smth"; // not possible, it's final field (constant)
+        // System.out.println(encapsulation.privateEncapsulation);
 
         System.out.println(encapsulation.publicEncapsulation = " bye!");
-
         encapsulation.publicMethod();
+        // encapsulation.privateMethod();
         encapsulation.defaultMethod();
+        encapsulation.protectedMethod();
+
         System.out.println("Getter: " + encapsulation.getPrivateEncapsulation());
-        // encapsulation.getPrivateEncapsulation() = "Changing the value of the private field."; // impossible
+
+        // encapsulation.getPrivateEncapsulation("new") = "";
 
         encapsulation.setPrivateEncapsulation("New private value");
         System.out.println("Getter: " + encapsulation.getPrivateEncapsulation());
 
-        // encapsulation.arr = {7, 7, 4, 3, 2};
+        // encapsulation.arr = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(encapsulation.arr));
         for (int i = 0; i < encapsulation.arr.length; i++) {
             encapsulation.arr[i] = 10;
         }
         System.out.println(Arrays.toString(encapsulation.arr));
 
-        // encapsulation.constant_5 = 6; // not possible
+        // encapsulation.CONSTANT_5 = 6;
 
         System.out.println(Math.PI);
         System.out.println(Integer.MAX_VALUE);
+
+
     }
 
-    /*private class DemoEncapsulation2 { // class can be private inside the main class
+    /*private class DemoEncapsulation2 {
 
     }*/
 }
