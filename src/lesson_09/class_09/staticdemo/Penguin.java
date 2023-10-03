@@ -1,27 +1,27 @@
 package lesson_09.class_09.staticdemo;
 
 public class Penguin {
-    static String color;
+    static String color;// = "Black and white";
     private String name;
     private int age;
-    static int weight;
+    static int weigth;
 
     static {
         color = "Black and white";
-        weight = 2;
+        weigth = 2;
     }
 
-    Penguin(final String name, final int age) {
+    public Penguin(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
     public void displayDetails() {
-        System.out.println("Name is: " + getName() + " age is: " + getAge());
+        System.out.println("Name: " + name + "\nAge: " + age);
     }
 
     static void makeASound() {
-        System.out.println("Making a sound!!");
+        System.out.println("Penguin sound...");
     }
 
     // Getters
@@ -32,7 +32,4 @@ public class Penguin {
     public int getAge() {
         return age;
     }
-
-
-
 }

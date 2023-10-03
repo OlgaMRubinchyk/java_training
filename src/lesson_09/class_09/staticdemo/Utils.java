@@ -1,5 +1,4 @@
 package lesson_09.class_09.staticdemo;
-
 public class Utils {
     static int sumArr(int[] arr) {
         int sum = 0;
