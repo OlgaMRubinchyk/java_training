@@ -16,19 +16,18 @@ public class Task10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the string:");
-        String inputString = sc.next();
+        String inputString = sc.nextLine();
 
         System.out.println("The string is lucky: " + stringIsLucky(inputString));
 
     }
 
     public static boolean stringIsLucky (String input) {
-        boolean isLucky = false;
         for (int i = 0; i < input.length() - 1; i++) {
             if (input.charAt(i) == input.charAt(i + 1)) {
-                isLucky = true;
+                return true;
             }
         }
-        return isLucky;
+        return false;
     }
 }
