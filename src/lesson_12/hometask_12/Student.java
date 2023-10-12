@@ -26,25 +26,16 @@ public class Student {
         this.fileNames = fileNames;
     }
 
-    public Student(String name, String[] fileNames) {
+    public Student(String name, String[] fileNames) throws FileException {
         this.name = name;
-        /*for (String fileName : fileList) {
-            try {
-                this.fileList.add(new File(fileName));
-            } catch(NullPointerException e) {
-                this.fileList.add(null);
-            }
-        }*/
-        //this.score = score;
         this.fileNames = fileNames;
         this.score = 0;
     }
 
     public int checkFileExtension(String fileName) throws FileException{
         if (fileName == null || fileName.equals("")) {
-            //score--;
+            score--;
             throw new FileException("File name is null or empty :(");
-            //return -1;
         }
         int index = fileName.lastIndexOf('.');
         // find extension
@@ -60,10 +51,10 @@ public class Student {
     public int checkFileExtension() {
         for (String fileName: fileNames) {
             try {
-                if (fileName == null) {
+                /*if (fileName == null) {
                     checkFileExtension(null);
-                }
-                checkFileExtension(fileName);
+                }*/
+                score += checkFileExtension(fileName);
             } catch (FileException e) {
                 System.out.println(e.getMessage());
             }
