@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Student {
     private String name;
-    ArrayList<File> fileList = new ArrayList<>();
+    private String[] fileNames;
     private int score;
 
     public String getName() {
@@ -18,52 +18,72 @@ public class Student {
         this.name = name;
     }
 
-    public int getScore() {
-        return score;
+    public String[] getFileNames() {
+        return fileNames;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setFileNames(String[] fileNames) {
+        this.fileNames = fileNames;
     }
 
-    public Student(String name, ArrayList<String> fileList, int score) {
+    public Student(String name, String[] fileNames) {
         this.name = name;
-        for (String fileName : fileList) {
+        /*for (String fileName : fileList) {
             try {
                 this.fileList.add(new File(fileName));
             } catch(NullPointerException e) {
                 this.fileList.add(null);
             }
-        }
-        this.score = score;
+        }*/
+        //this.score = score;
+        this.fileNames = fileNames;
+        this.score = 0;
     }
 
-    private int checkFileExtension(String fileName) throws FileException{
+    public int checkFileExtension(String fileName) throws FileException{
         if (fileName == null || fileName.equals("")) {
-            score--;
+            //score--;
             throw new FileException("File name is null or empty :(");
+            //return -1;
         }
         int index = fileName.lastIndexOf('.');
         // find extension
         String fileExtension = fileName.substring(index + 1);
         if (fileExtension.equals("java")) {
-            score++;
+            //score++;
+            return 1;
+        } else {
+            return 0;
         }
-        return score;
+        //return score;
     }
     public int checkFileExtension() {
-        for (File file: fileList) {
+        for (String fileName: fileNames) {
             try {
-                if (file == null) {
+                if (fileName == null) {
                     checkFileExtension(null);
                 }
-                checkFileExtension(file.getName());
+                checkFileExtension(fileName);
             } catch (FileException e) {
                 System.out.println(e.getMessage());
             }
         }
         return score;
     }
+
+    /*public int checkFileExtension(String fileName) {
+        //for (String fileName: fileNames) {
+            try {
+                if (fileName == null) {
+                    checkFileExtension(null);
+                }
+                checkFileExtension(fileName);
+            } catch (FileException e) {
+                System.out.println(e.getMessage());
+            }
+        //}
+        return score;
+    }*/
 
 
 
