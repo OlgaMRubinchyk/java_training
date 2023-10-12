@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class Task02 {
     public static void main(String[] args) {
         List<Integer> intArrayList = new ArrayList<>();
-        int numberOfIntegers = 20;
-        int maxInt = 5000;
+        int numberOfIntegers = 5;
+        int maxInt = 5;
 
         // create List
         Random random = new Random();
@@ -22,7 +22,7 @@ public class Task02 {
         System.out.println("Please enter user's number: ");
         int userNumber = scanner.nextInt();
         int userNumberIndex = intArrayList.indexOf(userNumber);
-        if (userNumberIndex == -1) {
+        if (userNumberIndex == -1) { // element is absent in the List
             System.out.println("Your number " + userNumber + " is absent in the List.");
         } else {
             System.out.println("Your number " + userNumber + " has index " + userNumberIndex + " in the List.");
@@ -34,6 +34,7 @@ public class Task02 {
         // show min and max
         int minNumber = intArrayList.get(0);
         int maxNumber = intArrayList.get(0);
+
         for (int i = 1; i < numberOfIntegers; i++) {
             if (intArrayList.get(i) > maxNumber) {
                 maxNumber = intArrayList.get(i);
